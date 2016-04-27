@@ -4,10 +4,10 @@
 
 ```bash
 $ cat Dockerfile
-/sbin/apk -q update
-apk add rsyslog
-rsyslogd -n
-/usr/sbin/rsyslogd -n
+FROM alpine:3.3
+RUN /sbin/apk update -q
+RUN /sbin/apk add rsyslog
+CMD /usr/sbin/rsyslogd -n
 ```
 
 ### Build the image ###
